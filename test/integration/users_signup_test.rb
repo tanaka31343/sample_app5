@@ -13,6 +13,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       # assert_select 'div#error_explanation'
       assert_select 'div.field_with_errors'
   end
+
   test "valid signup information" do
     get signup_path
     assert_difference 'User.count', 1 do
@@ -23,6 +24,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert_template 'users/show'
-    assert_not flash.nil?
+    assert is_logged_in?
   end
+
 end
