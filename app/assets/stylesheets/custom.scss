@@ -174,4 +174,9 @@ input {
     .form-control{
       color: $state-danger-text;
   }
+
+  #session_remember_me{
+    width: auto;
+    margin-left: 0;
+  }
 }
